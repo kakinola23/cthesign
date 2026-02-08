@@ -80,9 +80,9 @@ async def startup_event():
     """Initialize vector store on startup."""
     try:
         rag_service.initialize()
-        print("✓ Vector store initialized")
+        print("Vector store initialized")
     except Exception as e:
-        print(f"⚠ Vector store initialization failed: {e}")
+        print(f"Vector store initialization failed: {e}")
         print("Ensure you've run ingest.py first")
 
 
