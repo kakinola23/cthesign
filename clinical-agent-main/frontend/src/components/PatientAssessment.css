@@ -1,0 +1,372 @@
+.patient-assessment {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 200px);
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .patient-assessment {
+  background-color: #111827;
+}
+
+.assessment-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.assessment-header h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .assessment-header h3 {
+  color: #f9fafb;
+}
+
+.back-button {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 6px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+.patient-info-card {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .patient-info-card {
+  background-color: #1f2937;
+}
+
+.patient-info-card h4 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 10px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .patient-info-card h4 {
+  color: #f9fafb;
+  border-bottom-color: #4b5563;
+}
+
+.patient-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #495057;
+  min-width: 150px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .detail-label {
+  color: #d1d5db;
+}
+
+.detail-value {
+  color: #333;
+  font-size: 14px;
+  flex: 1;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .detail-value {
+  color: #f9fafb;
+}
+
+.symptoms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.symptom-tag {
+  background-color: #e7f3ff;
+  color: #007bff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.assessment-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.assess-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.assess-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.assess-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.chat-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.chat-button:hover {
+  background-color: #138496;
+}
+
+.download-button {
+  background-color: #596a3a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.download-button:hover {
+  background-color: #45522e;
+}
+
+
+.assessment-results {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .assessment-results {
+  background-color: #1f2937;
+}
+
+.assessment-results h4 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 10px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .assessment-results h4 {
+  color: #f9fafb;
+  border-bottom-color: #4b5563;
+}
+
+.result-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.result-card {
+  padding: 15px;
+  border-radius: 4px;
+  border: 2px solid;
+}
+
+.result-card.prediction-urgent {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
+
+.result-card.prediction-investigation {
+  border-color: #ffc107;
+  background-color: #fff3cd;
+}
+
+.result-card.prediction-routine {
+  border-color: #28a745;
+  background-color: #d4edda;
+}
+
+.result-card.risk-high {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
+
+.result-card.risk-moderate {
+  border-color: #ffc107;
+  background-color: #fff3cd;
+}
+
+.result-card.risk-low {
+  border-color: #28a745;
+  background-color: #d4edda;
+}
+
+.result-label {
+  font-size: 12px;
+  color: #6c757d;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .result-label {
+  color: #9ca3af;
+}
+
+.result-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .result-value {
+  color: #f9fafb;
+}
+
+.result-section {
+  margin-bottom: 25px;
+}
+
+.result-section h5 {
+  color: #495057;
+  font-size: 16px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.reasoning-text,
+.action-text {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #007bff;
+}
+
+.citations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.citation-item {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid #17a2b8;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .citation-item {
+  background-color: #374151;
+}
+
+.citation-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.citation-source {
+  font-weight: 600;
+  color: #17a2b8;
+  font-size: 14px;
+}
+
+.citation-page,
+.citation-section {
+  font-size: 12px;
+  color: #6c757d;
+  background-color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .citation-page,
+body.dark-mode .citation-section {
+  background-color: #1f2937;
+  color: #9ca3af;
+}
+
+.citation-excerpt {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .citation-excerpt {
+  color: #f9fafb;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+.error-message {
+  padding: 15px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+}

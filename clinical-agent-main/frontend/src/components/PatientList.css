@@ -1,0 +1,345 @@
+.patient-list {
+  padding: 0;
+  background-color: transparent;
+}
+
+.upload-section {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .upload-section {
+  background-color: #1f2937;
+}
+
+.upload-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.file-upload-wrapper {
+  position: relative;
+}
+
+.file-upload-label {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.file-upload-label:hover {
+  background-color: #0056b3;
+}
+
+.file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .checkbox-label {
+  color: #d1d5db;
+}
+
+.checkbox-label input[type="checkbox"] {
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+}
+
+.export-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.export-button:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.export-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.refresh-button {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background-color: #138496;
+}
+
+.refresh-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.success-message {
+  padding: 12px;
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 4px;
+  margin-top: 15px;
+  border: 1px solid #c3e6cb;
+}
+
+.filter-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .filter-section {
+  background-color: #1f2937;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-group label {
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .filter-group label {
+  color: #d1d5db;
+}
+
+.search-input {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  font-family: inherit;
+  min-width: 300px;
+  background-color: white;
+  color: #333;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .search-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.patient-count {
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .patient-count {
+  color: #9ca3af;
+}
+
+.table-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .table-container {
+  background-color: #1f2937;
+}
+
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .loading {
+  color: #9ca3af;
+}
+
+.error-message {
+  padding: 20px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+}
+
+.retry-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.retry-button:hover {
+  background-color: #0056b3;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #dee2e6;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .data-table thead {
+  background-color: #374151;
+  border-bottom-color: #4b5563;
+}
+
+.data-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .data-table th {
+  color: #d1d5db;
+}
+
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  color: #333;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark-mode .data-table td {
+  color: #f9fafb;
+  border-bottom-color: #4b5563;
+}
+
+.data-table tbody tr:hover {
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .data-table tbody tr:hover {
+  background-color: #374151;
+}
+
+.symptoms-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.symptom-tag {
+  background-color: #e7f3ff;
+  color: #007bff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.assess-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+.assess-button:hover {
+  background-color: #0056b3;
+}
+
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: #6c757d;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .no-data {
+  color: #9ca3af;
+}
+

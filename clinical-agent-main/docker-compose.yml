@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CHROMA_DB_PATH=/app/chroma_db
+      - PDF_PATH=/app/data/n12.pdf
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./data:/app/data:ro
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    restart: unless-stopped
+    networks:
+      - clinical-network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=/api
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - clinical-network
+
+  # Optional: Run ingestion as a separate service first
+  ingest:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - CHROMA_DB_PATH=/app/chroma_db
+      - PDF_PATH=/app/data/n12.pdf
+    volumes:
+      - chroma_data:/app/chroma_db
+      - ./data:/app/data:ro
+    command: python ingest.py
+    profiles:
+      - ingest
+    networks:
+      - clinical-network
+
+volumes:
+  chroma_data:
+
+networks:
+  clinical-network:
+    driver: bridge
