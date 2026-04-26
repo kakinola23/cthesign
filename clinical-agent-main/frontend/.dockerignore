@@ -10,17 +10,4 @@ dist/
 .env.*.local
 .DS_Store
 *.log
-# Terraform
-terraform/.terraform/
-terraform/terraform.tfstate
-terraform/terraform.tfstate.backup
-terraform/.terraform.lock.hcl
 
-# Node modules
-frontend/node_modules/
-
-# Environment
-.env
-
-# ChromaDB
-chroma_db/
