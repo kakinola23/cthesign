@@ -3,7 +3,7 @@
 // API URL configuration:
 // - In Docker/production: Uses /api which is proxied by nginx to backend
 // - In development: Uses http://localhost:8000 directly
-const API_BASE_URL = process.env.REACT_APP_API_URL || 
+const API_BASE_URL = process.env.REACT_APP_API_URL ||
   (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000');
 
 export interface Patient {

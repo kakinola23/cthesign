@@ -1,0 +1,20 @@
+[
+  {
+    "name": "frontend",
+    "image": "609956912662.dkr.ecr.us-east-1.amazonaws.com/clinical-agent-frontend:latest",
+    "portMappings": [
+      {
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/clinical-agent-frontend",
+        "awslogs-region": "us-east-1",
+        "awslogs-stream-prefix": "ecs"
+      }
+    }
+  }
+]

@@ -8,7 +8,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - CHROMA_DB_PATH=/app/chroma_db
       - PDF_PATH=/app/data/n12.pdf
     volumes:
@@ -39,7 +39,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
       - CHROMA_DB_PATH=/app/chroma_db
       - PDF_PATH=/app/data/n12.pdf
     volumes:

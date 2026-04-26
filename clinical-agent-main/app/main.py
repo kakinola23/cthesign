@@ -4,7 +4,7 @@ import shutil
 from typing import Optional, Union, List, Dict, Any
 from fastapi import FastAPI, HTTPException, UploadFile, File, BackgroundTasks
 from fastapi.middleware.cors import CORSMiddleware
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 
 from app.models import (
@@ -50,10 +50,9 @@ def load_prompt(filename: str) -> str:
 
 
 # Initialize LLM
-llm = ChatGoogleGenerativeAI(
-    model="gemini-2.0-flash", temperature=0, convert_system_message_to_human=True
+llm = ChatOpenAI(
+    model="gpt-4o-mini", temperature=0
 )
-
 
 def extract_content(
     response_content: Union[str, List[Union[str, Dict[str, Any]]]],

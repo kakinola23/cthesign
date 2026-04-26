@@ -11,7 +11,7 @@ ENV REACT_APP_API_URL=$REACT_APP_API_URL
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -32,5 +32,7 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
 
 # Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+ENV BACKEND_HOST=api
+ENV BACKEND_PORT=8000
+CMD ["/bin/sh", "-c", "envsubst '${BACKEND_HOST} ${BACKEND_PORT}' < /etc/nginx/conf.d/default.conf > /tmp/default.conf && cp /tmp/default.conf /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"]
 

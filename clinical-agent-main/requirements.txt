@@ -3,10 +3,11 @@ uvicorn[standard]
 pydantic
 langchain
 langchain-community
-langchain-google-genai
+langchain-openai
 langchain-chroma
 langchain-text-splitters
 chromadb
-google-generativeai
+openai
 python-dotenv
 pypdf
+python-multipart
