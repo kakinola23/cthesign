@@ -27,14 +27,14 @@ jobs:
 
       - name: Build and push backend
         run: |
-          docker build -t $BACKEND_ECR:latest .
+          docker build -t $BACKEND_ECR:latest ./clinical-agent-main
           docker push $BACKEND_ECR:latest
 
       - name: Build and push frontend
         run: |
           docker build -t $FRONTEND_ECR:latest \
             --build-arg REACT_APP_API_URL=/api \
-            ./frontend
+            ./clinical-agent-main/frontend
           docker push $FRONTEND_ECR:latest
 
       - name: Deploy backend to ECS
@@ -42,11 +42,13 @@ jobs:
           aws ecs update-service \
             --cluster clinical-agent-cluster \
             --service clinical-agent-backend \
-            --force-new-deployment
+            --force-new-deployment \
+            --region $AWS_REGION
 
       - name: Deploy frontend to ECS
         run: |
           aws ecs update-service \
             --cluster clinical-agent-cluster \
             --service clinical-agent-frontend \
-            --force-new-deployment
+            --force-new-deployment \
+            --region $AWS_REGION
