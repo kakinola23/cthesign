@@ -32,7 +32,7 @@ jobs:
 
       - name: Build and push frontend
         run: |
-          docker build -t $FRONTEND_ECR:latest \
+          docker build --no-cache -t $FRONTEND_ECR:latest \
             --build-arg REACT_APP_API_URL=http://clinical-agent-alb-957445952.us-east-1.elb.amazonaws.com \
             ./frontend
           docker push $FRONTEND_ECR:latest
