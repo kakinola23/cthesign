@@ -6,10 +6,10 @@ variable "project_name" {
   default = "clinical-agent"
 }
 
-variable "google_api_key" {
-  description = "Google Gemini API key"
+variable "openai_api_key" {
+  description = "OpenAI API key"
   sensitive   = true
-  default     = "AIzaSyC45d52vCheEyikpQaI1kDdDlQzoAyOfkg"
+  default     = """"
 }
 
 variable "backend_cpu" {

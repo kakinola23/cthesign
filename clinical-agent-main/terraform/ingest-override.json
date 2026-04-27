@@ -1,0 +1,14 @@
+{
+  "containerOverrides": [
+    {
+      "name": "backend",
+      "command": ["python", "ingest.py"],
+      "environment": [
+        {
+          "name": "OPENAI_API_KEY",
+          "value": """"
+        }
+      ]
+    }
+  ]
+}

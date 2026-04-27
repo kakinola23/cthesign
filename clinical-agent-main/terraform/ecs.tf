@@ -83,10 +83,10 @@ resource "aws_ecs_task_definition" "backend" {
       protocol      = "tcp"
     }]
     environment = [
-      { name = "GOOGLE_API_KEY", value = var.google_api_key },
-      { name = "CHROMA_DB_PATH", value = "/app/chroma_db" },
-      { name = "PDF_PATH",       value = "/app/data/n12.pdf" }
-    ]
+  { name = "OPENAI_API_KEY", value = var.openai_api_key },
+  { name = "CHROMA_DB_PATH", value = "/app/chroma_db" },
+  { name = "PDF_PATH",       value = "/app/data/n12.pdf" }
+]
     mountPoints = [{
       sourceVolume  = "chroma-data"
       containerPath = "/app/chroma_db"
@@ -118,6 +118,12 @@ resource "aws_ecs_task_definition" "frontend" {
       containerPort = 80
       protocol      = "tcp"
     }]
+    environment = [
+      {
+        name  = "BACKEND_URL"
+        value = aws_lb.main.dns_name
+      }
+    ]
     logConfiguration = {
       logDriver = "awslogs"
       options = {
